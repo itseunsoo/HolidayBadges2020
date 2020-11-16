@@ -1,0 +1,156 @@
+$backgroundColor: #2e495d;
+$bodyColor: #ffffff;
+$bodyFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+
+$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+// *{
+//   border-style: solid;
+//   border-width: 1px;
+// }
+
+body {
+  background: $backgroundColor;
+  color: $bodyColor;
+  font-family: $bodyFont;
+  height: 100%;
+  width: 100%;
+  margin: 32px;
+}
+
+h1 {
+  margin: 0;
+  margin-top: 16px;
+  line-height: 125%;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0;
+  margin-top: 4px;
+  line-height: 125%;
+  font-size: 0.8rem;
+}
+
+.badgeContainer-unearned{
+  padding: 16px;
+  text-align: center;
+  width: 160px;
+  border-radius: 1rem;
+  transition: 0.3s;
+  img {
+    filter: grayscale(100%);
+    height: 92px;
+  }
+
+
+}
+
+
+
+.badgeContainer-unearned-control {
+  padding: 16px;
+  text-align: center;
+  width: 160px;
+  border-radius: 1rem;
+  transition: 0.3s;
+  p{
+    margin-top: 16px;
+  }
+  img {
+
+    height: 92px;
+  }
+
+
+}
+
+.badgeContainer-earned {
+  padding: 16px;
+  text-align: center;
+  width: 160px;
+  border-radius: 1rem;
+
+  img {
+    height: 92px;
+    animation: neonGlow2 1s infinite alternate $easeInOutQuad;
+    @keyframes neonGlow2{
+      0% {
+        filter: drop-shadow(0 0 4px #ee9b00);
+      }
+      100% {
+        filter: drop-shadow(0 0 6px #f19c00);
+      }
+    }
+  }
+
+  transition: 0.3s;
+}
+
+.badgeContainer-justearned {
+  padding: 16px;
+  text-align: center;
+  width: 160px;
+  border-radius: 1rem;
+  color: #8cffee;
+  img {
+    height: 92px;
+  }
+
+  transition: 0.3s;
+}
+
+.justEarned {
+  img {
+    animation: neonGlow 1s infinite alternate $easeInOutQuad;
+    @keyframes neonGlow {
+      0% {
+        filter: drop-shadow(0 0 10px #ee9b00);
+      }
+      100% {
+        filter: drop-shadow(0 0 18px #f19c00);
+      }
+    }
+  }
+}
+
+.justEarned {
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+}
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+}
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.badgeContainer-unearned:hover, .badgeContainer-unearned-control:hover {
+  background-color: rgba(128, 128, 128, 0.25);
+  cursor: pointer;
+  img {
+    filter: grayscale(0%);
+  }
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+
